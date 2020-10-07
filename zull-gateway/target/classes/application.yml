@@ -1,0 +1,41 @@
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+      
+spring:
+  application:
+    name: ZUUL-GATEWAY 
+
+server:
+  port: 8100
+
+zuul:
+  routes:
+    user-service:
+      service-id: user-service
+    promotions-service:
+      service-id: promotions-service
+    composite-service:
+      service-id: composite-service
+    catalogue-service:
+      service-id: catalogue-service
+    carts-service:
+      service-id: carts-service
+    orders-service:
+      service-id: orders-service
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
+
+      
+      
